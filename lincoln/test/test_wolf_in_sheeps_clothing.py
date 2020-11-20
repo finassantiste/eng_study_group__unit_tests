@@ -27,5 +27,6 @@ class MyTestWolfCase(unittest.TestCase):
         self.assertEqual(sentence2_to_test, warn_the_sheep(['sheep', 'sheep', 'wolf', 'sheep', 'sheep']))
 
 
+
 if __name__ == '__main__':
     unittest.main()
