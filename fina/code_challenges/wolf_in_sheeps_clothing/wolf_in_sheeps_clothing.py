@@ -2,7 +2,15 @@
 # (See screenshot in same folder.)
 
 
-def warn_the_sheep(sheep_wolf_queue=None):
-    if sheep_wolf_queue:
-        return 'Oi! Sheep number N! You are about to be eaten by a wolf!'
-    return 'Pls go away and stop eating my sheep'
+def warn_the_sheep(sheep_wolf_queue):
+    wolf_sentece = 'Pls go away'
+    wolf_name = 'wolf'
+    save_sheep_sentence = "Oi! Sheep {}, wolf is behind you!"
+
+    if sheep_wolf_queue[-1] == wolf_name:
+        return wolf_sentece
+    else:
+        wolf_index = sheep_wolf_queue.index(wolf_name)
+        sheep_position = len(sheep_wolf_queue) - wolf_index - 1
+
+        return save_sheep_sentence.format(sheep_position)
